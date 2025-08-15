@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gddiDataDictionary xmlns="http://www.omg.org/gddi/data-dictionary">
+    <typeBlock>
+        <typeId>254</typeId>
+        <typeName>GDDI Test</typeName>
+        <majorVersion>1</majorVersion>
+        <minorVersion>0</minorVersion>
+        <description>This type is reserved for testing GDDI.</description>
+        <tagInfoArray>
+            <tlv>
+                <tagId>1</tagId>
+                <tagName>bool meta</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits>true/false</valueUnits>
+                <description>For testing the boolean data type.</description>
+            </tlv>
+            <tlv>
+                <tagId>2</tagId>
+                <tagName>octet meta</tagName>
+                <valueLength>1</valueLength>
+                <valueType>octet</valueType>
+                <valueUnits>byte</valueUnits>
+                <description>For testing the octet data type.</description>
+            </tlv>
+            <tlv>
+                <tagId>3</tagId>
+                <tagName>short meta</tagName>
+                <valueLength>2</valueLength>
+                <valueType>short</valueType>
+                <valueUnits>signed integer</valueUnits>
+                <description>For testing the short data type.</description>
+            </tlv>
+            <tlv>
+                <tagId>4</tagId>
+                <tagName>ushort meta</tagName>
+                <valueLength>2</valueLength>
+                <valueType>unsigned short</valueType>
+                <valueUnits>unsigned integer</valueUnits>
+                <description>For testing the unsigned short data type.</description>
+            </tlv>
+            <tlv>
+                <tagId>5</tagId>
+                <tagName>long meta</tagName>
+                <valueLength>4</valueLength>
+                <valueType>long</valueType>
+                <valueUnits>signed integer</valueUnits>
+                <description>For testing the long data type.</description>
+            </tlv>
+            <tlv>
+                <tagId>6</tagId>
+                <tagName>ulong meta</tagName>
+                <valueLength>4</valueLength>
+                <valueType>unsigned long</valueType>
+                <valueUnits>unsigned integer</valueUnits>
+                <description>For testing the unsigned long data type.</description>
+            </tlv>
+            <tlv>
+                <tagId>7</tagId>
+                <tagName>long long meta</tagName>
+                <valueLength>8</valueLength>
+                <valueType>long long</valueType>
+                <valueUnits>signed integer</valueUnits>
+                <description>For testing the long long data type.</description>
+            </tlv>
+            <tlv>
+                <tagId>8</tagId>
+                <tagName>ulong long meta</tagName>
+                <valueLength>8</valueLength>
+                <valueType>unsigned long long</valueType>
+                <valueUnits>unsigned integer</valueUnits>
+                <description>For testing the unsigned long long data type.</description>
+            </tlv>
+            <tlv>
+                <tagId>9</tagId>
+                <tagName>float meta</tagName>
+                <valueLength>4</valueLength>
+                <valueType>float</valueType>
+                <valueUnits>fractional number</valueUnits>
+                <description>For testing the float data type.</description>
+            </tlv>
+            <tlv>
+                <tagId>10</tagId>
+                <tagName>double meta</tagName>
+                <valueLength>8</valueLength>
+                <valueType>double</valueType>
+                <valueUnits>fractional number</valueUnits>
+                <description>For testing the double data type.</description>
+            </tlv>
+            <tlv>
+                <tagId>11</tagId>
+                <tagName>string meta</tagName>
+                <valueLength>0</valueLength>
+                <valueType>string</valueType>
+                <valueUnits>character string</valueUnits>
+                <description>For testing the string data type.</description>
+            </tlv>
+            <tlv>
+                <tagId>12</tagId>
+                <tagName>octet array meta</tagName>
+                <valueLength>0</valueLength>
+                <valueType>octet array</valueType>
+                <valueUnits>byte array</valueUnits>
+                <description>For testing the octet array data type.</description>
+            </tlv>
+        </tagInfoArray>
+    </typeBlock>
+</gddiDataDictionary>
