@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gddiDataDictionary xmlns="http://www.omg.org/gddi/data-dictionary">
+    <typeBlock>
+        <typeId>13</typeId>
+        <typeName>Command Echo</typeName>
+        <majorVersion>1</majorVersion>
+        <minorVersion>0</minorVersion>
+        <description>This GDDI type is used to carry an echo of a space vehicle command. These messages are typically transferred from a ground modem to a FEP application for comparing against the transmitted command to ensure integrity of the uplink.</description>
+        <tagInfoArray>
+            <tlv>
+                <tagId>1</tagId>
+                <tagName>Command Length</tagName>
+                <valueLength>4</valueLength>
+                <valueType>unsigned long</valueType>
+                <valueUnits>bits</valueUnits>
+                <description>Length in bits of the command echo data block. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>2</tagId>
+                <tagName>Command ID</tagName>
+                <valueLength>4</valueLength>
+                <valueType>unsigned long</valueType>
+                <valueUnits>identifier</valueUnits>
+                <description>Identifier used to match command requests and command echoes. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>3</tagId>
+                <tagName>Encoding</tagName>
+                <valueLength>1</valueLength>
+                <valueType>octet</valueType>
+                <valueUnits>enum</valueUnits>
+                <description>Type of encoding representing the command echo data: (0: Binary, 1: Dibit, 2: Tribit). (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>4</tagId>
+                <tagName>Status</tagName>
+                <valueLength>1</valueLength>
+                <valueType>octet</valueType>
+                <valueUnits>enum</valueUnits>
+                <description>Echo Status: (0: Successfully compared with command or fill command, 1: Miscompared with command, 2: Timeout waiting for echo, 3: Unexpected echo). (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>5</tagId>
+                <tagName>Timestamp Seconds</tagName>
+                <valueLength>4</valueLength>
+                <valueType>unsigned long</valueType>
+                <valueUnits>seconds</valueUnits>
+                <description>Time that this echo was received by the downlink receiver. This represents the number of non-leap seconds elapsed since 00:00:00 UTC on 1 January 1970. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>6</tagId>
+                <tagName>Timestamp Picoseconds</tagName>
+                <valueLength>8</valueLength>
+                <valueType>unsigned long long</valueType>
+                <valueUnits>picoseconds</valueUnits>
+                <description>The number of picoseconds representing the fractional portion of the 'Timestamp Seconds' metadata. (Default: 0)</description>
+            </tlv>
+        </tagInfoArray>
+    </typeBlock>
+</gddiDataDictionary>

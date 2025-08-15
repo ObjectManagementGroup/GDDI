@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gddiDataDictionary xmlns="http://www.omg.org/gddi/data-dictionary">
+    <typeBlock>
+        <typeId>3</typeId>
+        <typeName>CCSDS Transfer Frame</typeName>
+        <majorVersion>1</majorVersion>
+        <minorVersion>0</minorVersion>
+        <description>This GDDI type is used to carry CCSDS TM, AOS, or USLP transfer frames in the GDDI payload with corresponding metadata used by recipients to process the data. From the ground system perspective: TM, AOS, and USLP transfer frames (aka VCDUs) are the output of the corresponding Data Link 'receiver' that has processed a downlink CADU Frame and parsed/attached the applicable metadata to this message. From the spacecraft perspective: TM, AOS, and USLP transfer frames are the output of the corresponding Data Link 'sender' that has encapsulated downlink BUS Space/Encap Packets and CFDP UT_SDUs, VCA_SDUs, OCF_SDUs, etc into the transfer frames that are sent to the ground. Note that TC transfer frames are a completely separate format which are carried in 'CCSDS Telecommand Frame' GDDI messages, and the CCSDS version for TC frames overlaps with that of TM frames, driving distinctly separate formats. Also, TM/AOS/USLP transfer frames may also be used for uplink cases like IP-over-CCSDS, and since USLP is symmetric it can be used in place of TC for uplink command transfer frames.</description>
+        <tagInfoArray>
+            <tlv>
+                <tagId>1</tagId>
+                <tagName>TF Version</tagName>
+                <valueLength>1</valueLength>
+                <valueType>octet</valueType>
+                <valueUnits>enum</valueUnits>
+                <description>The version of the CCSDS Transfer Frame carried by this message (0: TM, 1: AOS, 2: RESERVED, 3: USLP). (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>2</tagId>
+                <tagName>SCID</tagName>
+                <valueLength>2</valueLength>
+                <valueType>unsigned short</valueType>
+                <valueUnits>identifier</valueUnits>
+                <description>Space Craft ID associated with this 'CCSDS Transfer Frame'. CCSDS TM max SCID is 1023. CCSDS AOS max SCID is 255. CCSDS USLP max SCID is 65535. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>3</tagId>
+                <tagName>VCID</tagName>
+                <valueLength>1</valueLength>
+                <valueType>octet</valueType>
+                <valueUnits>identifier</valueUnits>
+                <description>Virtual Channel ID associated with this 'CCSDS Transfer Frame'. CCSDS AOS and USLP max VCID is 63. CCSDS TM max VCID is 7. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>4</tagId>
+                <tagName>MAPID</tagName>
+                <valueLength>1</valueLength>
+                <valueType>octet</valueType>
+                <valueUnits>identifier</valueUnits>
+                <description>Multiplexer Access Point ID associated with this 'CCSDS Transfer Frame'. This metadata is only applicable to CCSDS USLP transfer frames. For USLP this is a 4-bit field in the Primary Header of all Transfer Frames used for MAP services. When only one MAP exists (or for USLP VCP, VCA, OCF, VCF, MCF, and Insert services), the MAPID is set to a constant value for all data on that Virtual Channel. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>5</tagId>
+                <tagName>Timestamp Seconds</tagName>
+                <valueLength>4</valueLength>
+                <valueType>unsigned long</valueType>
+                <valueUnits>seconds</valueUnits>
+                <description>Timestamp for this CCSDS Transfer Frame, representing the number of non-leap seconds that have elapsed since 00:00:00 UTC on 1 January 1970. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>6</tagId>
+                <tagName>Timestamp Picoseconds</tagName>
+                <valueLength>8</valueLength>
+                <valueType>unsigned long long</valueType>
+                <valueUnits>picoseconds</valueUnits>
+                <description>The number of picoseconds representing the fractional portion of the 'Timestamp Seconds' metadata. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>7</tagId>
+                <tagName>Errors Exist</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits>true/false</valueUnits>
+                <description>Indicates if an error was detected in the received 'CCSDS Transfer Frame'. Errors include: Uncorrectable Block-FEC errors, CCSDS CRC errors, Invalid Transfer Frame Versions, Invalid Length, and/or Uncorrectable Transfer Frame Header (AOS only). (Default: false)</description>
+            </tlv>
+        </tagInfoArray>
+    </typeBlock>
+</gddiDataDictionary>

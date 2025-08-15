@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gddiDataDictionary xmlns="http://www.omg.org/gddi/data-dictionary">
+    <typeBlock>
+        <typeId>251</typeId>
+        <typeName>Directive</typeName>
+        <majorVersion>1</majorVersion>
+        <minorVersion>0</minorVersion>
+        <description>Text Directive</description>
+        <tagInfoArray>
+            <tlv>
+                <tagId>1</tagId>
+                <tagName>Directive</tagName>
+                <valueLength>0</valueLength>
+                <valueType>string</valueType>
+                <valueUnits></valueUnits>
+                <description>Directive string to send to something further down the GDDI chain</description>
+            </tlv>
+        </tagInfoArray>
+    </typeBlock>
+</gddiDataDictionary>
