@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gddiDataDictionary xmlns="http://www.omg.org/gddi/data-dictionary">
+    <typeBlock>
+        <typeId>253</typeId>
+        <typeName>Command Verifiers</typeName>
+        <majorVersion>1</majorVersion>
+        <minorVersion>0</minorVersion>
+        <description>Command Verifiers</description>
+        <tagInfoArray>
+            <tlv>
+                <tagId>1</tagId>
+                <tagName>Transferred To Range Verifier</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits></valueUnits>
+                <description>Transferred to range means the command has been received to the network that connects the ground system to the spacecraft. Obviously, this verifier must come from something other than the spacecraft. (Verify: true, Do not Verify: false) (Default: false)</description>
+            </tlv>
+            <tlv>
+                <tagId>2</tagId>
+                <tagName>Sent From Range Verifier</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits></valueUnits>
+                <description>Sent from range means the command has been transmitted to the spacecraft by the network that connects the ground system to the spacecraft. Obviously, this verifier must come from something other than the spacecraft. (Verify: true, Do not Verify: false) (Default: false)</description>
+            </tlv>
+            <tlv>
+                <tagId>3</tagId>
+                <tagName>Received Verifier</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits></valueUnits>
+                <description>A verifier that simply means the SpaceSystem has received the command. (Verify: true, Do not Verify: false) (Default: false)</description>
+            </tlv>
+            <tlv>
+                <tagId>4</tagId>
+                <tagName>Accepted Verifier</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits></valueUnits>
+                <description>A verifier that means the SpaceSystem has accepted the command. (Verify: true, Do not Verify: false) (Default: false)</description>
+            </tlv>
+            <tlv>
+                <tagId>5</tagId>
+                <tagName>Queued Verifiers</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits></valueUnits>
+                <description>A verifer that means the command is scheduled for execution by the SpaceSystem. (Verify: true, Do not Verify: false) (Default: false)</description>
+            </tlv>
+            <tlv>
+                <tagId>6</tagId>
+                <tagName>Execution Verifier</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits></valueUnits>
+                <description>A verifier that indicates that the command is being executed. An optional Element indicates how far along the command has progressed either as a fixed value or an (possibly scaled) ParameterInstance value. (Verify: true, Do not Verify: false) (Default: false)</description>
+            </tlv>
+            <tlv>
+                <tagId>7</tagId>
+                <tagName>Complete Verifier</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits></valueUnits>
+                <description>A possible set of verifiers that all must be true for the command be considered completed. (Verify: true, Do not Verify: false) (Default: false)</description>
+            </tlv>
+            <tlv>
+                <tagId>8</tagId>
+                <tagName>Failed Verifier</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits></valueUnits>
+                <description>When true, indicates that the command failed. timeToWait is how long to wait for the FailedVerifier to test true. (Verify: true, Do not Verify: false) (Default: false)</description>
+            </tlv>
+        </tagInfoArray>
+    </typeBlock>
+</gddiDataDictionary>

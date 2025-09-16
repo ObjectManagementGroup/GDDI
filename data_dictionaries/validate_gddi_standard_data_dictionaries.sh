@@ -1,0 +1,19 @@
+#!/bin/bash -e
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-001-raw-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-002-frame-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-003-ccsds_transfer_frame-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-004-ccsds_telecommand_frame-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-005-ccsds_map_sdu-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-006-aes_block-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-007-message_correlation-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-008-data_rate-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-009-waveform-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-010-fec_code_block-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-011-command_request-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-012-command_acknowledge-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-013-command_echo-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-014-range_data-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-251-directive-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-252-command_status-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-253-command_verifiers-v1.0.xml
+xmllint --schema ./data-dictionary.xsd --noout gddi-standard-typeid-254-gddi_test-v1.0.xml

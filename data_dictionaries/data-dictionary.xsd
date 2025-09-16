@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.omg.org/gddi/data-dictionary" xmlns:data-dictionary="http://www.omg.org/gddi/data-dictionary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="gddiDataDictionary" type="data-dictionary:data-dictionary-type" />
+
+  <xs:complexType name="data-dictionary-type">
+    <xs:sequence>
+      <xs:element name="typeBlock" minOccurs="1" maxOccurs="unbounded" type="data-dictionary:type-block-type">        
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="type-block-type">
+    <xs:sequence>
+      <xs:element name="typeId" type="data-dictionary:type-id-type" />
+      <xs:element name="typeName" type="xs:string" />
+      <xs:element name="majorVersion" type="data-dictionary:major-version-type" />
+      <xs:element name="minorVersion" type="data-dictionary:minor-version-type" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="tagInfoArray" minOccurs="0" maxOccurs="unbounded" type="data-dictionary:tag-info-array-type" />
+    </xs:sequence>
+  </xs:complexType>
+
+ <xs:complexType name="tag-info-array-type">
+    <xs:sequence>
+      <xs:element name="tlv" minOccurs="1" maxOccurs="unbounded" type="data-dictionary:tlv-type">        
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tlv-type">
+    <xs:sequence>
+      <xs:element name="tagId" type="data-dictionary:tag-id-type" />
+      <xs:element name="tagName" type="xs:string" />
+      <xs:element name="valueLength" type="data-dictionary:value-length-type" />
+      <xs:element name="valueType" type="data-dictionary:tlv-value-type-type" />
+      <xs:element name="valueUnits" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>  
+
+  <xs:simpleType name="tlv-value-type-type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="short"/>
+      <xs:enumeration value="unsigned short"/>
+      <xs:enumeration value="long"/>
+      <xs:enumeration value="unsigned long"/>
+      <xs:enumeration value="long long"/>
+      <xs:enumeration value="unsigned long long"/>
+      <xs:enumeration value="float"/>
+      <xs:enumeration value="double"/>
+      <xs:enumeration value="octet"/>
+      <xs:enumeration value="boolean"/>
+      <xs:enumeration value="string"/>
+      <xs:enumeration value="octet array"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="type-id-type">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="value-length-type">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="65531"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tag-id-type">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="major-version-type">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="minor-version-type">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

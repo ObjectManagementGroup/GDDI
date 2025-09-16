@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gddiDataDictionary xmlns="http://www.omg.org/gddi/data-dictionary">
+    <typeBlock>
+        <typeId>9</typeId>
+        <typeName>Waveform</typeName>
+        <majorVersion>1</majorVersion>
+        <minorVersion>0</minorVersion>
+        <description>This type contains waveform related metadata that applies to the baseband data payload.</description>
+        <tagInfoArray>
+            <tlv>
+                <tagId>1</tagId>
+                <tagName>Carrier Locked</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits>true/false</valueUnits>
+                <description>Identifies if the RF carrier is acquired/locked or not. May lead or lag the payload data by tens of milliseconds. (Default: false)</description>
+            </tlv>
+            <tlv>
+                <tagId>2</tagId>
+                <tagName>Bitsync Locked</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits>true/false</valueUnits>
+                <description>Identifies if the bit synchronizer is locked or not. May lead or lag the payload data by tens of milliseconds. (Default: false)</description>
+            </tlv>
+            <tlv>
+                <tagId>3</tagId>
+                <tagName>Convolutional Locked</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits>true/false</valueUnits>
+                <description>Identifies if the convolutional decoder (e.g. Viterbi decoder) is locked or not. May lead or lag the payload data by tens of milliseconds. (Default: false)</description>
+            </tlv>
+            <tlv>
+                <tagId>4</tagId>
+                <tagName>SNR Estimate</tagName>
+                <valueLength>8</valueLength>
+                <valueType>double</valueType>
+                <valueUnits>dB</valueUnits>
+                <description>The estimated RF signal-to-noise ratio (SNR) measured during integration time. (Default: 0.0)</description>
+            </tlv>
+            <tlv>
+                <tagId>5</tagId>
+                <tagName>Center Frequency</tagName>
+                <valueLength>8</valueLength>
+                <valueType>double</valueType>
+                <valueUnits>Hz</valueUnits>
+                <description>The center frequency of the downlink waveform. (Default: 0.0)</description>
+            </tlv>
+        </tagInfoArray>
+    </typeBlock>
+</gddiDataDictionary>

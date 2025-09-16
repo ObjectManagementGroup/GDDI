@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gddiDataDictionary xmlns="http://www.omg.org/gddi/data-dictionary">
+    <typeBlock>
+        <typeId>10</typeId>
+        <typeName>FEC Code Block</typeName>
+        <majorVersion>1</majorVersion>
+        <minorVersion>0</minorVersion>
+        <description>This type is used to carry Forward Error Correction related metadata to support the multiple code blocks for the Worldview spacecraft.</description>
+        <tagInfoArray>
+            <tlv>
+                <tagId>1</tagId>
+                <tagName>Total Codeblocks</tagName>
+                <valueLength>1</valueLength>
+                <valueType>octet</valueType>
+                <valueUnits>number</valueUnits>
+                <description>The total number of FEC codeblocks per frame. Used to assemble decoded frames containing multiple codeblocks. This is always set to 1 unless using the Worldview frame structure. (Default: 1)</description>
+            </tlv>
+            <tlv>
+                <tagId>2</tagId>
+                <tagName>Codeblock Number</tagName>
+                <valueLength>1</valueLength>
+                <valueType>octet</valueType>
+                <valueUnits>number</valueUnits>
+                <description>Number of the codeblock represented in the payload for this portion of the complete frame, starting at codeblock #1. Used to assemble decoded frames containing multiple codeblocks. This is always set to 1 unless using the Worldview frame structure. (Default: 1)</description>
+            </tlv>
+        </tagInfoArray>
+    </typeBlock>
+</gddiDataDictionary>
