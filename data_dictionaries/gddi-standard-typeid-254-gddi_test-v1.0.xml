@@ -13,7 +13,7 @@
                 <valueLength>1</valueLength>
                 <valueType>boolean</valueType>
                 <valueUnits>true/false</valueUnits>
-                <description>For testing the boolean data type.</description>
+                <description>For testing the boolean data type. (Default: false)</description>
             </tlv>
             <tlv>
                 <tagId>2</tagId>
@@ -21,7 +21,7 @@
                 <valueLength>1</valueLength>
                 <valueType>octet</valueType>
                 <valueUnits>byte</valueUnits>
-                <description>For testing the octet data type.</description>
+                <description>For testing the octet data type. (Default: 0)</description>
             </tlv>
             <tlv>
                 <tagId>3</tagId>
@@ -29,7 +29,7 @@
                 <valueLength>2</valueLength>
                 <valueType>short</valueType>
                 <valueUnits>signed integer</valueUnits>
-                <description>For testing the short data type.</description>
+                <description>For testing the short data type. (Default: 0)</description>
             </tlv>
             <tlv>
                 <tagId>4</tagId>
@@ -37,7 +37,7 @@
                 <valueLength>2</valueLength>
                 <valueType>unsigned short</valueType>
                 <valueUnits>unsigned integer</valueUnits>
-                <description>For testing the unsigned short data type.</description>
+                <description>For testing the unsigned short data type. (Default: 0)</description>
             </tlv>
             <tlv>
                 <tagId>5</tagId>
@@ -45,7 +45,7 @@
                 <valueLength>4</valueLength>
                 <valueType>long</valueType>
                 <valueUnits>signed integer</valueUnits>
-                <description>For testing the long data type.</description>
+                <description>For testing the long data type. (Default: 0)</description>
             </tlv>
             <tlv>
                 <tagId>6</tagId>
@@ -53,7 +53,7 @@
                 <valueLength>4</valueLength>
                 <valueType>unsigned long</valueType>
                 <valueUnits>unsigned integer</valueUnits>
-                <description>For testing the unsigned long data type.</description>
+                <description>For testing the unsigned long data type. (Default: 0)</description>
             </tlv>
             <tlv>
                 <tagId>7</tagId>
@@ -61,7 +61,7 @@
                 <valueLength>8</valueLength>
                 <valueType>long long</valueType>
                 <valueUnits>signed integer</valueUnits>
-                <description>For testing the long long data type.</description>
+                <description>For testing the long long data type. (Default: 0)</description>
             </tlv>
             <tlv>
                 <tagId>8</tagId>
@@ -69,7 +69,7 @@
                 <valueLength>8</valueLength>
                 <valueType>unsigned long long</valueType>
                 <valueUnits>unsigned integer</valueUnits>
-                <description>For testing the unsigned long long data type.</description>
+                <description>For testing the unsigned long long data type. (Default: 0)</description>
             </tlv>
             <tlv>
                 <tagId>9</tagId>
@@ -77,7 +77,7 @@
                 <valueLength>4</valueLength>
                 <valueType>float</valueType>
                 <valueUnits>fractional number</valueUnits>
-                <description>For testing the float data type.</description>
+                <description>For testing the float data type. (Default: 0)</description>
             </tlv>
             <tlv>
                 <tagId>10</tagId>
@@ -85,7 +85,7 @@
                 <valueLength>8</valueLength>
                 <valueType>double</valueType>
                 <valueUnits>fractional number</valueUnits>
-                <description>For testing the double data type.</description>
+                <description>For testing the double data type. (Default: 0)</description>
             </tlv>
             <tlv>
                 <tagId>11</tagId>
@@ -93,7 +93,7 @@
                 <valueLength>0</valueLength>
                 <valueType>string</valueType>
                 <valueUnits>character string</valueUnits>
-                <description>For testing the string data type.</description>
+                <description>For testing the string data type. (Default: "")</description>
             </tlv>
             <tlv>
                 <tagId>12</tagId>
@@ -101,7 +101,7 @@
                 <valueLength>0</valueLength>
                 <valueType>octet array</valueType>
                 <valueUnits>byte array</valueUnits>
-                <description>For testing the octet array data type.</description>
+                <description>For testing the octet array data type. (Default: 0x00)</description>
             </tlv>
         </tagInfoArray>
     </typeBlock>
