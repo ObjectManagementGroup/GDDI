@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gddiDataDictionary xmlns="http://www.omg.org/gddi/data-dictionary">
+    <typeBlock>
+        <typeId>12</typeId>
+        <typeName>Command Acknowledge</typeName>
+        <majorVersion>1</majorVersion>
+        <minorVersion>0</minorVersion>
+        <description>This GDDI type is used to indicate that a space vehicle command has been released at a certain point in the ground system, e.g. transmitted from the modem or released to a crypto.</description>
+        <tagInfoArray>
+            <tlv>
+                <tagId>1</tagId>
+                <tagName>Command ID</tagName>
+                <valueLength>4</valueLength>
+                <valueType>unsigned long</valueType>
+                <valueUnits>identifier</valueUnits>
+                <description>Identifier used to match command requests and command acknowledgements. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>2</tagId>
+                <tagName>Status</tagName>
+                <valueLength>1</valueLength>
+                <valueType>octet</valueType>
+                <valueUnits>enum</valueUnits>
+                <description>Ack Status: (0: Command was successfully released, 1: Command arrived too late to be released on time, 2: Command not dequeued in time to be released). (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>3</tagId>
+                <tagName>Timestamp Seconds</tagName>
+                <valueLength>4</valueLength>
+                <valueType>unsigned long</valueType>
+                <valueUnits>seconds</valueUnits>
+                <description>Time that this command was released by the uplink transmitter. This represents the number of non-leap seconds elapsed since 00:00:00 UTC on 1 January 1970. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>4</tagId>
+                <tagName>Timestamp Picoseconds</tagName>
+                <valueLength>8</valueLength>
+                <valueType>unsigned long long</valueType>
+                <valueUnits>picoseconds</valueUnits>
+                <description>The number of picoseconds representing the fractional portion of the 'Timestamp Seconds' metadata. (Default: 0)</description>
+            </tlv>
+        </tagInfoArray>
+    </typeBlock>
+</gddiDataDictionary>

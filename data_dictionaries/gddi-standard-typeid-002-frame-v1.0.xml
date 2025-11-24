@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gddiDataDictionary xmlns="http://www.omg.org/gddi/data-dictionary">
+    <typeBlock>
+        <typeId>2</typeId>
+        <typeName>Frame</typeName>
+        <majorVersion>1</majorVersion>
+        <minorVersion>0</minorVersion>
+        <description>This GDDI type is used to carry satellite telemetry or mission data frames in the GDDI payload with corresponding metadata used by recipients to process the data. These may be CCSDS CADU frames, PCM frames, or IRIG 106-11 Chapter-4 TDM Minor frames. Frames may contain a sync word/pattern aka an Attached Sync Marker (ASM), may contain block FEC code-blocks/parity/check-symbols, and may be randomized. These messages are typically transferred between the Modem and FEP applications or between the FEP and C2 applications for downlink telemetry or payload data. A typical example is a downlink CCSDS CADU frame extracted from a demodulated bitstream by a Modem and sent to a FEP application for further CCSDS processing. However, uplink frames are used for use cases like IP-over-CCSDS where CADUs containing satellite payload data are transmitted to the spacecraft.</description>
+        <tagInfoArray>
+            <tlv>
+                <tagId>1</tagId>
+                <tagName>Frame Length</tagName>
+                <valueLength>4</valueLength>
+                <valueType>unsigned long</valueType>
+                <valueUnits>bits</valueUnits>
+                <description>Length in bits of the entire Frame, including any sync marker, frame data, and any FEC code-blocks/parity/check-symbols. This value must be greater than zero to provide a meaningful frame payload length. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>2</tagId>
+                <tagName>ASM Length</tagName>
+                <valueLength>2</valueLength>
+                <valueType>unsigned short</valueType>
+                <valueUnits>bits</valueUnits>
+                <description>Length in bits of any sync marker present. Set to zero if no ASM is present. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>3</tagId>
+                <tagName>Frame Lock State</tagName>
+                <valueLength>1</valueLength>
+                <valueType>octet</valueType>
+                <valueUnits>enum</valueUnits>
+                <description>Lock State of this Frame assigned by the receiving frame synchronizer: (0: Stopped, 1: Search, 2: Verify, 3: Lock, 4: Check, 5: NoData). (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>4</tagId>
+                <tagName>ASM Bit Errors</tagName>
+                <valueLength>1</valueLength>
+                <valueType>octet</valueType>
+                <valueUnits>bits</valueUnits>
+                <description>The number of bit errors detected in the Attached Sync Marker of this frame. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>5</tagId>
+                <tagName>Inverted</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits>true/false</valueUnits>
+                <description>Indicates if data inversion was required to achieve frame synchronization. (Default: false)</description>
+            </tlv>
+            <tlv>
+                <tagId>6</tagId>
+                <tagName>Sync Lost</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits>true/false</valueUnits>
+                <description>Indicates if the previous frame was locked and the current frame is not. True means the previous frame was either in lock or check and the current frame is either in search or verify state. This remains latched until a lock frame arrives, at which point it is set to False. (Default: false)</description>
+            </tlv>
+            <tlv>
+                <tagId>7</tagId>
+                <tagName>Bits Slipped</tagName>
+                <valueLength>1</valueLength>
+                <valueType>octet</valueType>
+                <valueUnits>bits</valueUnits>
+                <description>The number and direction of slipped bits detected in the frame. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>8</tagId>
+                <tagName>Randomization Algorithm</tagName>
+                <valueLength>1</valueLength>
+                <valueType>octet</valueType>
+                <valueUnits>enum</valueUnits>
+                <description>Indicates the type of randomization algorithm used to scramble the data: (0: Disabled, 1: CCSDS polynomial X8_X7_X5_X3_1, 2: DVB-S, 3: Worldview, 4-14: Reserved, 15: Other). (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>9</tagId>
+                <tagName>FEC Algorithm</tagName>
+                <valueLength>1</valueLength>
+                <valueType>octet</valueType>
+                <valueUnits>enum</valueUnits>
+                <description>Indicates the type of Forward Error Correction algorithm used to decode the data: (0: Disabled, 1: Reed-Solomon 255/223, 2: LDPC 7/8, 3: DVB-S2, 4: LDPC AR4JA General, 5: Reed-Solomon 255/239, 6: TPC, 7: LDPC AR4JA 1/2, 8: LDPC AR4JA 2/3, 9: LDPC AR4JA 4/5, 10: LDPC GD 4/5, 11: Reed-Solomon DVB-S 255/239, 12-14: Reserved, 15: Other; a hybrid combination of decoders). (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>10</tagId>
+                <tagName>FEC Codeblock Length</tagName>
+                <valueLength>4</valueLength>
+                <valueType>unsigned long</valueType>
+                <valueUnits>bytes</valueUnits>
+                <description>Length of any Forward Error Correction Codeblock Check bytes. Set to zero if no Check bytes are present. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>11</tagId>
+                <tagName>FEC Uncorrectable</tagName>
+                <valueLength>1</valueLength>
+                <valueType>boolean</valueType>
+                <valueUnits>true/false</valueUnits>
+                <description>True indicates that the FEC decoder was not able to correct all errors in this frame. False indicates: no uncorrectable errors were found, a FEC Algorithm that cannot identify uncorrectable errors was used (i.e. TPC which always reports false), or no FEC Algorithm was enabled. (Default: false)</description>
+            </tlv>
+            <tlv>
+                <tagId>12</tagId>
+                <tagName>FEC Corrected Symbols</tagName>
+                <valueLength>4</valueLength>
+                <valueType>unsigned long</valueType>
+                <valueUnits>symbols</valueUnits>
+                <description>The number of errored symbols that were corrected/modified by the FEC decoder algorithm resulting in a frame with no errors. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>13</tagId>
+                <tagName>Timestamp Seconds</tagName>
+                <valueLength>4</valueLength>
+                <valueType>unsigned long</valueType>
+                <valueUnits>seconds</valueUnits>
+                <description>Timestamp for this frame, representing the number of non-leap seconds that have elapsed since 00:00:00 UTC on 1 January 1970. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>14</tagId>
+                <tagName>Timestamp Picoseconds</tagName>
+                <valueLength>8</valueLength>
+                <valueType>unsigned long long</valueType>
+                <valueUnits>picoseconds</valueUnits>
+                <description>The number of picoseconds representing the fractional portion of the 'Timestamp Seconds' metadata. (Default: 0)</description>
+            </tlv>
+        </tagInfoArray>
+    </typeBlock>
+</gddiDataDictionary>

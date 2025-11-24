@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gddiDataDictionary xmlns="http://www.omg.org/gddi/data-dictionary">
+    <typeBlock>
+        <typeId>8</typeId>
+        <typeName>Data Rate</typeName>
+        <majorVersion>1</majorVersion>
+        <minorVersion>0</minorVersion>
+        <description>This type contains baseband data rate metadata.</description>
+        <tagInfoArray>
+            <tlv>
+                <tagId>1</tagId>
+                <tagName>Bit Rate</tagName>
+                <valueLength>8</valueLength>
+                <valueType>double</valueType>
+                <valueUnits>bps</valueUnits>
+                <description>Bit Rate of the underlying raw binary data in the GDDI payload. (Default: 0.0)</description>
+            </tlv>
+        </tagInfoArray>
+    </typeBlock>
+</gddiDataDictionary>
