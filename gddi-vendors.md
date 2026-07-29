@@ -1,6 +1,7 @@
 # List of GDDI Vendor ID's
 
 Version: 2025.04.11
+
 Date:    2025-04-11
 
 
