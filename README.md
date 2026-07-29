@@ -12,3 +12,4 @@ Default values for each Tag-Length-Value (TLV) are defined in the 'description' 
 
 Any Vendor-specific GDDI data dictionaries are controlled at the vendor's discretion.
 
+Vendors are identified by vendor identification numbers defined in [gddi-vendor.md](gddi-vendor.md)
