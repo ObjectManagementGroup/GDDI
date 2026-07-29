@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gddiDataDictionary xmlns="http://www.omg.org/gddi/data-dictionary">
+    <typeBlock>
+        <typeId>250</typeId>
+        <typeName>Parameter Values</typeName>
+        <majorVersion>1</majorVersion>
+        <minorVersion>0</minorVersion>
+        <description>This type can be used for transmission of either derived parameter(s) computed by an external application or local parameter(s) used purely by the local application. 1-N sets of these TLVs can be repeated to carry multiple parameters within a typeBlock.  This can be utilized by applications to communicate new locally generated parameters, such as external derived parameters that are communicated to a later application using GDDI.  These additional parameters may impact how the data stream is processed by the later applications.</description>
+        <tagInfoArray>
+            <tlv>
+                <tagId>1</tagId>
+                <tagName>Data Source Name</tagName>
+                <valueLength>0</valueLength>
+                <valueType>string</valueType>
+                <valueUnits></valueUnits>
+                <description>Name of the data source (e.g., SCID).</description>
+            </tlv>
+            <tlv>
+                <tagId>2</tagId>
+                <tagName>Data Source Mode</tagName>
+                <valueLength>0</valueLength>
+                <valueType>string</valueType>
+                <valueUnits></valueUnits>
+                <description>Mode of the data source (real-time: 1, simulation: 2, playback:3) (Default: 1)</description>
+            </tlv>
+            <tlv>
+                <tagId>3</tagId>
+                <tagName>Timestamp Seconds</tagName>
+                <valueLength>4</valueLength>
+                <valueType>unsigned long</valueType>
+                <valueUnits>seconds</valueUnits>
+                <description>Timestamp for this parameter, representing the number of non-leap seconds that have elapsed since 00:00:00 UTC on 1 January 1970. A value of zero indicates that no specific time is being provided. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>4</tagId>
+                <tagName>Timestamp Picoseconds</tagName>
+                <valueLength>8</valueLength>
+                <valueType>unsigned long long</valueType>
+                <valueUnits>picoseconds</valueUnits>
+                <description>The number of picoseconds representing the fractional portion of the 'Timestamp Seconds' metadata. (Default: 0)</description>
+            </tlv>
+            <tlv>
+                <tagId>5</tagId>
+                <tagName>Parameter Name</tagName>
+                <valueLength>0</valueLength>
+                <valueType>string</valueType>
+                <valueUnits></valueUnits>
+                <description>Name of parameter</description>
+            </tlv>
+            <tlv>
+                <tagId>6</tagId>
+                <tagName>Parameter Type</tagName>
+                <valueLength>1</valueLength>
+                <valueType>octet</valueType>
+                <valueUnits></valueUnits>
+                <description>Type of parameter (boolean: 1, octet: 2, short: 3, unsigned short: 4, long: 5, unsigned long: 6, long long: 7, unsigned long long: 8, float: 9, double: 10, string: 11, octet array: 12) (Default: 12)</description>
+            </tlv>
+            <tlv>
+                <tagId>7</tagId>
+                <tagName>Parameter Value</tagName>
+                <valueLength>0</valueLength>
+                <valueType>octet array</valueType>
+                <valueUnits>byte array</valueUnits>
+                <description>Value of parameter, interpreted per Type.  Data size follows section 8 of the GDDI specification.</description>
+            </tlv>
+        </tagInfoArray>
+    </typeBlock>
+</gddiDataDictionary>
