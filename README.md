@@ -4,7 +4,7 @@ Ground Data Delivery Interface (GDDI) specification located at: https://www.omg.
 These dictionaries provide Standard GDDI 'Types' and are individually version-controlled via the \<majorVersion\> and \<minorVersion\>
 elements contained in each xml file (as explained in the GDDI specification).
 
-This GDDI 'Type' version is also contained in each xml dictionary file name with the format:
+This GDDI 'Type' version is also contained in each xml dictionary file name with the format:\
 gddi-standard-typeid-\<TYPE ID VALUE\>-\<TYPE NAME\>-v\<MAJOR VERSION\>.\<MINOR VERSION\>.xml
 
 Default values for each Tag-Length-Value (TLV) are defined in the 'description' field of each dictionary via the following format:
